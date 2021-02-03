@@ -1,0 +1,14 @@
+resources:
+- name: concourse-examples
+  type: git
+  icon: github
+  source:
+    branch: resource-test
+    uri: https://github.com/jomora/examples.git
+
+jobs:
+- name: configure-pipelines
+  public: true
+  plan:
+    - get: concourse-examples
+      trigger: true
